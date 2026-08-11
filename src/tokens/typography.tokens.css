@@ -1,0 +1,101 @@
+/*
+ * typography.tokens.css — NHN 디자인시스템 타이포그래피 (SSOT).
+ * 출처: Figma "Typography Guide" (node 75:3942). 폰트: Pretendard.
+ * 유틸리티 10개 = Figma 텍스트 스타일 10개(1:1 대응). code-only 타이포 없음.
+ *   2026-07-14 재동기화: 15px 계열이 Figma에서 Body Base로 통합되며 type-button-lg(15/18/400)
+ *   삭제 — Button lg가 type-body-base로 이관되어 코드에서도 제거.
+ *   2026-07-15 정합 감사: NhncloudGnb 실제 스펙이 Body Large(16/20/500)로 확인되어
+ *   type-nav(17/26/500, Figma 근거 없던 code-only)를 제거하고 type-body-large로 이관.
+ *
+ * 타이포는 size/weight/lineHeight/family가 묶인 합성 토큰이므로 CSS 변수가 아니라
+ * @utility 클래스로 생성한다. 사용: <h1 className="type-heading-1">…</h1>
+ * (raw px는 이 SSOT 파일에만 존재 — hook 예외.)
+ *
+ * 참고: Noto Sans KR은 숫자 강조 등 보조 용도로만 제한 사용(기본 폰트는 Pretendard).
+ */
+
+:root {
+  --font-pretendard: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", sans-serif;
+}
+
+/* Display — 서비스·페이지 메인 타이틀 (34px · Bold · 50px) */
+@utility type-display {
+  font-family: var(--font-pretendard);
+  font-size: 34px;
+  line-height: 50px;
+  font-weight: 700;
+}
+
+/* Heading 1 — 섹션 대표 설명 / 서브타이틀 (22px · Regular · 34px) */
+@utility type-heading-1 {
+  font-family: var(--font-pretendard);
+  font-size: 22px;
+  line-height: 34px;
+  font-weight: 400;
+}
+
+/* Heading 2 — 섹션 헤딩 (20px · Regular · 28px) */
+@utility type-heading-2 {
+  font-family: var(--font-pretendard);
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+/* Heading 3 — 모달·다이얼로그 타이틀 (19px · Bold · 34px) */
+@utility type-heading-3 {
+  font-family: var(--font-pretendard);
+  font-size: 19px;
+  line-height: 34px;
+  font-weight: 700;
+}
+
+/* Heading 4 — 스텝 인디케이터·특수 강조 (18px · Regular · 44px) */
+@utility type-heading-4 {
+  font-family: var(--font-pretendard);
+  font-size: 18px;
+  line-height: 44px;
+  font-weight: 400;
+}
+
+/* Body Large — 두드러진 레이블 (16px · Medium · 20px) */
+@utility type-body-large {
+  font-family: var(--font-pretendard);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+/* Body Base — 내비게이션·버튼·폼 레이블 (15px · Medium · 22px) */
+@utility type-body-base {
+  font-family: var(--font-pretendard);
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+/* Body Small — 본문·목록 아이템 (14px · Regular · 20px) */
+@utility type-body-small {
+  font-family: var(--font-pretendard);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+/* Caption Base — 기본 UI 텍스트, 최다 사용 (13px · Regular · 20px) */
+@utility type-caption-base {
+  font-family: var(--font-pretendard);
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+/* Caption Small — 푸터·저작권·메타 정보 (12px · Regular · 18px) */
+@utility type-caption-small {
+  font-family: var(--font-pretendard);
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+}

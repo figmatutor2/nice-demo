@@ -1,0 +1,127 @@
+/*
+ * colors.tokens.css — NHN 디자인시스템 컬러 토큰 (SSOT).
+ * 출처: Figma "NHN 실습 디자인시스템" (node 146-10144) / get_variable_defs.
+ * raw hex는 이 SSOT 파일에만 존재한다(hook 예외). 컴포넌트는 semantic 유틸리티만 사용.
+ *
+ * 구조: Primitive → Semantic 참조.
+ *  - Primitive 팔레트는 :root 의 --palette-* 변수로 둔다(--color- 접두사 미사용 → Tailwind
+ *    color 네임스페이스와 충돌 없음, 유틸리티도 생성되지 않음 → 의미기반 사용 강제).
+ *  - @theme 첫 줄 `--color-*: initial;` 로 Tailwind 기본 팔레트를 제거한다
+ *    (bg-red-500 등 기본 컬러 유틸리티 생성 차단 = 토큰 우회 구멍 제거).
+ *  - Semantic 토큰만 @theme 에 정의하여 유틸리티(bg-*, text-*, border-*)를 생성하고,
+ *    값은 var(--palette-*) 로 primitive를 참조한다.
+ */
+
+/* ── Primitive palette (--palette-*, 유틸리티 미생성) ─────────────────── */
+:root {
+  /* blue */
+  --palette-blue-100: #e9f1ff;
+  --palette-blue-200: #c8dcff;
+  --palette-blue-300: #a6c6ff;
+  --palette-blue-400: #84b1ff;
+  --palette-blue-500: #609afe;
+  --palette-blue-600: #377cf4;
+  --palette-blue-700: #125de6;
+  --palette-blue-800: #1446c8;
+  --palette-blue-900: #162faa;
+
+  /* neutral */
+  --palette-neutral-100: #f9f9f9;
+  --palette-neutral-200: #f4f4f4;
+  --palette-neutral-300: #eeeeee;
+  --palette-neutral-400: #e5e5e5;
+  --palette-neutral-500: #dddddd;
+  --palette-neutral-550: #c8ccd4;
+  --palette-neutral-600: #cccccc;
+  --palette-neutral-700: #aaaaaa;
+  --palette-neutral-800: #777777;
+  --palette-neutral-850: #444444;
+  --palette-neutral-900: #555555;
+
+  /* red */
+  --palette-red-100: #fff0f0;
+  --palette-red-200: #ffd6d6;
+  --palette-red-300: #ffadad;
+  --palette-red-500: #e14040;
+  --palette-red-700: #b31111;
+
+  /* green */
+  --palette-green-100: #f2ffe8;
+  --palette-green-200: #c4eed4;
+  --palette-green-300: #6fd395;
+  --palette-green-500: #1ca653;
+  --palette-green-700: #1a7a33;
+
+  /* purple */
+  --palette-purple-100: #f6e9ff;
+  --palette-purple-200: #e2c4ff;
+  --palette-purple-300: #bf84f5;
+  --palette-purple-500: #9421db;
+  --palette-purple-700: #6b18a0;
+}
+
+/* ── Semantic tokens (유틸리티 생성, palette 참조) ───────────────────── */
+@theme {
+  /* Tailwind 기본 컬러 팔레트 제거 (충돌·우회 차단). 이 줄 이후 정의만 유효. */
+  --color-*: initial;
+
+  /* static — 테마 불변 고정색 (직접 사용 허용) */
+  --color-static-white: #ffffff;
+  --color-static-black: #222222;
+
+  /* text */
+  --color-text-default: var(--color-static-black);
+  --color-text-primary: var(--palette-blue-700);
+  --color-text-secondary: var(--palette-neutral-900);
+  --color-text-disabled: var(--palette-neutral-700);
+  --color-text-placeholder: var(--palette-neutral-550);
+
+  /* background */
+  --color-bg-canvas: var(--color-static-white);
+  --color-bg-surface: var(--palette-neutral-100);
+  --color-bg-subtle: var(--palette-neutral-200);
+  --color-bg-muted: var(--palette-neutral-400);
+  --color-bg-inverse: var(--palette-neutral-850);
+
+  /* border */
+  --color-border-subtle: var(--palette-neutral-300);
+  --color-border-default: var(--palette-neutral-500);
+  --color-border-medium: var(--palette-neutral-600);
+  --color-border-strong: var(--palette-neutral-700);
+  --color-border-primary: var(--palette-blue-700);
+  --color-border-caution: var(--palette-red-700);
+  --color-border-inverse: var(--color-static-white);
+
+  /* icon */
+  --color-icon-default: var(--color-static-black);
+  --color-icon-subtle: var(--palette-neutral-700);
+  --color-icon-accent: var(--palette-blue-700);
+  --color-icon-on-white: var(--palette-neutral-100);
+  --color-icon-tertiary: var(--palette-neutral-500);
+
+  /* interactive */
+  --color-interactive-primary: var(--palette-blue-700);
+  --color-interactive-hover: var(--palette-blue-800);
+  --color-interactive-light: var(--palette-blue-100);
+
+  /* status */
+  --color-status-critical: var(--palette-red-500);
+  --color-status-critical-surface: var(--palette-red-100);
+  --color-status-success: var(--palette-green-500);
+  --color-status-success-surface: var(--palette-green-100);
+  --color-status-urgent: var(--palette-purple-500);
+  --color-status-urgent-surface: var(--palette-purple-100);
+  --color-status-info: var(--palette-blue-400);
+  --color-status-info-surface: var(--palette-blue-100);
+
+  /* fill */
+  --color-fill-default: var(--color-static-black);
+  --color-fill-primary-01: var(--palette-blue-700);
+  --color-fill-primary-02: var(--palette-blue-800);
+  --color-fill-secondary-01: var(--palette-neutral-800);
+  --color-fill-secondary-02: var(--palette-neutral-900);
+  --color-fill-tertiary-01: var(--palette-neutral-100);
+  --color-fill-subtle: var(--palette-neutral-100);
+  --color-fill-muted: var(--palette-neutral-400);
+  --color-fill-white: var(--color-static-white);
+}

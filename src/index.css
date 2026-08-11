@@ -1,0 +1,4 @@
+/* Tailwind v4 + design tokens. Tokens are the single source of truth for all
+ * visual values (see src/tokens/). App/component code references tokens only. */
+@import "tailwindcss";
+@import "./tokens/design-tokens.css";

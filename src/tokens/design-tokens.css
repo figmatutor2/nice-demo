@@ -1,0 +1,11 @@
+/*
+ * design-tokens.css — Single source of truth (SSOT) entry point.
+ * Aggregates every category token file. Import THIS from src/index.css.
+ * This file and every *.tokens.css are the ONLY places raw visual values may live.
+ */
+@import "./colors.tokens.css";
+@import "./spacing.tokens.css";
+@import "./radius.tokens.css";
+@import "./typography.tokens.css";
+@import "./shadows.tokens.css";
+@import "./breakpoint.tokens.css";

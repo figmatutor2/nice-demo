@@ -1,0 +1,18 @@
+/*
+ * radius.tokens.css — NHN 디자인시스템 라디우스 토큰 (SSOT).
+ * 출처: Figma "Radius Guide" (node 155:5329), collection `radius/*` — 3 토큰.
+ * Figma `radius/N` (= N px) → `--radius-N`. Tailwind 유틸리티 rounded-N 생성.
+ *
+ *  radius/1  (1px)  — 최소 라운드: 미세한 모서리 처리
+ *  radius/2  (2px)  — 기본 라운드: 카드, 태그 등
+ *  radius/8  (8px)  — 입력 필드 등 (raw 승격 · Figma radius 변수 아님)
+ *  radius/18 (18px) — 큰 라운드: 버튼, 뱃지 등
+ *  radius/30 (30px) — pill: RoundButton (raw 승격 · Figma radius 변수 아님)
+ */
+@theme {
+  --radius-1: 1px;
+  --radius-2: 2px;
+  --radius-8: 8px;
+  --radius-18: 18px;
+  --radius-30: 30px;
+}

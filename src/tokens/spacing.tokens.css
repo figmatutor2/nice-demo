@@ -1,0 +1,71 @@
+/*
+ * spacing.tokens.css — NHN 디자인시스템 스페이싱 토큰 (SSOT).
+ * 출처: Figma "Spacing Guide" (node 155:5240), collection `scale/*` — 18 스케일 토큰.
+ * Figma `scale/N` (= N px) → `--spacing-N`. Tailwind 유틸리티 p-N / gap-N / m-N 등 생성.
+ * 예: scale/16 → --spacing-16 → p-16 (=16px).
+ */
+@theme {
+  --spacing-1: 1px;
+  --spacing-2: 2px;
+  --spacing-4: 4px;
+  --spacing-5: 5px;
+  --spacing-6: 6px;
+  --spacing-8: 8px;
+  /* AccountMenu 드롭다운 패널 세로 패딩(py-9) — Figma "NHN 실습 디자인시스템"(node 256:2691) 프레임 raw 값. Figma scale 컬렉션에 scale/9 변수 없음. */
+  --spacing-9: 9px;
+  --spacing-10: 10px;
+  --spacing-11: 11px;
+  --spacing-12: 12px;
+  --spacing-13: 13px;
+  --spacing-15: 15px;
+  --spacing-16: 16px;
+  /* Nhncloud/Gnb 상단 메뉴 항목 좌우 패딩(px-18) — Figma "NHN 실습 디자인시스템"(node 256:2900) 프레임 raw 값. Figma scale 컬렉션에 scale/18 변수 없음. */
+  --spacing-18: 18px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-25: 25px;
+  --spacing-26: 26px;
+  /* RoundButton lg 좌우 패딩(px-28) — Figma "NHN 실습 디자인시스템"(node 256:2852) 프레임 raw 값. Figma scale 컬렉션에 scale/28 변수 없음. */
+  --spacing-28: 28px;
+  --spacing-30: 30px;
+  /* Figma scale 컬렉션(node 155:5240, 18개)에 scale/32 변수 없음 — 코드에서 사용하는 raw 값(Pagination size-32·Input h-32·Toolbar h-32 등). 2026-07-14 재동기화에서 Figma 부재 확인, 사용 중이라 유지. */
+  --spacing-32: 32px;
+  /* Modal cardPlaceholder(결제수단 추가 영역, node 326:1682) 상하 패딩(py-33) — Figma "NHN 실습 디자인시스템"(node 329:1587 Modal/Server Security Check) raw 프레임 치수. 프레임 높이 106 = 33*2 + 버튼 40. Figma scale 컬렉션에 scale/33 변수 없음. */
+  --spacing-33: 33px;
+  /* Figma scale 컬렉션(node 155:5240, 18개)에 scale/40 변수 없음 — 코드에서 사용하는 raw 값(Button lg h-40·RoundButton sm h-40·Modal overlay p-40 등). 2026-07-14 재동기화에서 Figma 부재 확인, 사용 중이라 유지. */
+  --spacing-40: 40px;
+  /* Modal header(node 326:1641) 상단 패딩(pt-45) — Figma "NHN 실습 디자인시스템"(node 329:1587 Modal/Server Security Check) raw 프레임 치수. header 높이 111 = 45 + 타이틀 36 + 30. Figma scale 컬렉션에 scale/45 변수 없음. */
+  --spacing-45: 45px;
+  /* Modal stepIndicator 단계 번호 뱃지(stepNumberBadge, node 326:1648) 정사각 크기(size-46) — Figma "NHN 실습 디자인시스템"(node 329:1587 Modal/Server Security Check) raw 프레임 치수. Figma scale 컬렉션에 scale/46 변수 없음. */
+  --spacing-46: 46px;
+  /* 비그리드 raw 값 — Figma "Button"(node 106:4623) 프레임 min-width에서 직접 유래. 8그리드 스케일 아님. */
+  --spacing-47: 47px;
+  /* RoundButton lg 높이(h-48, 이후 TextInput 높이 재사용) — Figma "NHN 실습 디자인시스템"(node 256:2852) 프레임 raw 값. Figma scale 컬렉션에 scale/48 변수 없음. */
+  --spacing-48: 48px;
+  --spacing-50: 50px;
+  /* Topbar 행 높이 — ResourceTopbar(logo/tab/menu) + 조립 Topbar 4개 파츠에서 반복되는 하드코딩 60px를 토큰으로 승격.
+     Figma spacing 컬렉션(node 155:5240)에 scale/60 변수는 없음(raw 프레임 높이). 8그리드 스케일 아님. */
+  --spacing-60: 60px;
+  /* Nhncloud/Gnb 바 높이(h-72) — Figma "NHN 실습 디자인시스템"(node 256:2900) 프레임 raw 값. Figma scale 컬렉션에 scale/72 변수 없음. */
+  --spacing-72: 72px;
+  /* Nhncloud/Gnb 우측 유틸 그룹과 Console 버튼 사이 간격(gap-80) — Figma "NHN 실습 디자인시스템"(node 256:2900) 프레임 raw 값. Figma scale 컬렉션에 scale/80 변수 없음. */
+  --spacing-80: 80px;
+  --spacing-86: 86px;
+  /* Modal stepIndicator 단계 사이 연결선(Divider, node 326:1976) 폭(w-90) — Figma "NHN 실습 디자인시스템"(node 329:1587 Modal/Server Security Check) raw 프레임 치수. Figma scale 컬렉션에 scale/90 변수 없음. */
+  --spacing-90: 90px;
+  /* Modal stepIndicator 단계 컬럼(node 326:1971) 폭(w-98) — Figma "NHN 실습 디자인시스템"(node 329:1587 Modal/Server Security Check) raw 프레임 치수. Figma scale 컬렉션에 scale/98 변수 없음. */
+  --spacing-98: 98px;
+  /* ControlResource 폼 요소 최소 폭 — Dropdown(min-w 117)·Input(min-w 180) 프레임 폭에서 직접 유래.
+     Figma spacing 컬렉션(node 155:5240)에 scale/117·scale/180 변수 없음(raw 프레임 폭). 8그리드 스케일 아님. */
+  --spacing-117: 117px;
+  /* AccountMenu 드롭다운 고정 폭(w-156) — Figma "NHN 실습 디자인시스템"(node 256:2691) raw 프레임 폭에서 직접 유래. 8그리드 스케일 아님(scale/156 변수 없음). */
+  --spacing-156: 156px;
+  --spacing-180: 180px;
+  /* LnbNavigation 고정 폭 — 레이아웃(페이지 레벨) 컴포넌트 LnbNavigation 조립본의 고정 width.
+     Figma "NHN 실습 디자인시스템"(node 109:4672)의 raw 프레임 폭에서 직접 유래. 8그리드 스케일 아님(scale/260 변수 없음). */
+  --spacing-260: 260px;
+  /* PasswordConfirmPage 폼 고정 폭(w-440) — Figma "NHN 실습 디자인시스템"(node 289:2664 Form / node 256:2888 TextInput)의 raw 프레임 폭에서 직접 유래. 8그리드 스케일 아님(scale/440 변수 없음). */
+  --spacing-440: 440px;
+  /* Modal 다이얼로그 고정 폭(w-700) — Figma "NHN 실습 디자인시스템"(node 329:1587 / 326:1644 Modal/Server Security Check)의 raw 프레임 폭에서 직접 유래. 페이지 레벨 바가 아니라 다이얼로그 고정 폭이므로 고정 허용(LnbNavigation w-260·Form w-440 선례와 동일). 8그리드 스케일 아님(scale/700 변수 없음). */
+  --spacing-700: 700px;
+}
