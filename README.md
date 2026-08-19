@@ -1,4 +1,4 @@
-# NHN Cloud 디자인 시스템 하네스
+# 디자인 시스템 하네스
 
 Figma 디자인 시스템을 **토큰 기반 React 컴포넌트**로 변환하는 하네스다. NHN Cloud 콘솔·퍼블릭 존 화면을 Vite 6 · React 19 · TypeScript 5 · Tailwind CSS v4 · Storybook 8 스택으로 구현하며, 모든 시각 값(색·간격·라운드·타이포·그림자)은 `src/tokens`에 정의된 디자인 토큰만 참조한다. 토큰 외 하드코딩(raw hex, raw px, `rgb()`, arbitrary Tailwind)은 커밋 훅(`.claude/hooks/check-hardcode.mjs`)이 도구 레벨에서 자동 차단해, 사람 리뷰와 무관하게 일관성을 강제한다.
 
